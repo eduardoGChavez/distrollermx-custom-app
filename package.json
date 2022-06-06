@@ -1,0 +1,33 @@
+{
+  "name": "YOURAPPNAME",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "lint": "eslint --ext js,jsx,ts,tsx .",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json}\""
+  },
+  "lint-staged": {
+    "*.{ts,js,tsx,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@vtex/prettier-config": "^0.3.6",
+    "eslint": "^6.8.0",
+    "eslint-config-vtex": "^12.3.2",
+    "eslint-config-vtex-react": "^6.3.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.1",
+    "prettier": "^2.4.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.12.1",
+    "@types/googlemaps": "^3.43.3",
+    "google-map-react": "^2.1.10"
+  }
+}

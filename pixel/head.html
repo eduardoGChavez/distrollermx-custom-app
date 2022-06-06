@@ -1,0 +1,37 @@
+<script defer>
+  // ;(function () {
+  //   var appId = '{{settings.gtmId}}'
+  //   if (!appId) {
+  //     console.error(
+  //       'Warning: No APP NAME ID is defined. Please configure it in the apps admin.'
+  //     )
+  //     return
+  //   }
+
+  //   // Add script here
+  // })()
+
+  try {
+    window.onload = function() {
+      let iframeContainer = document.getElementsByClassName('vtex-iframe-0-x-container--ksi-mision-especial')[0]; 
+      console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
+      let iframe = iframeContainer.getElementsByTagName('iframe')[0]; 
+      console.log(iframe);
+      let iframeContent = iframe.ownerDocument;// getElementById('juego'));
+      console.log(iframe.contentWindow.document);
+      console.log(iframe.ownerDocument);
+      console.log(iframeContent);
+      console.log(iframeContent.getElementsByTagName('body')[0]);
+      console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+      let canvasContent = iframeContainer.getElementsByTagName('canvas')[0];
+      console.log(canvasContent);
+    }
+} catch(e){
+    console.log(e);
+}
+</script>
+<style>
+  .vtex-iframe-0-x-container--ksi-mision-especial canvas {
+    height: 200px;
+  }
+</style>

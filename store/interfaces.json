@@ -1,0 +1,17 @@
+{
+  "pixel.APPNAME": {
+    "component": "index"
+  },
+  "storeMap": {
+    "component": "StoreMap"
+  },
+  "longDescription": {
+    "component": "LongDescription"
+  },
+  "OrderFilters": {
+    "component": "OrderByFilters"
+  },
+  "IFrameGames": {
+    "component": "Juegos"
+  }
+}
