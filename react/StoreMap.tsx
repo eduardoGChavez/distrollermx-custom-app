@@ -122,8 +122,9 @@ const StoreMap: FC = () => {
           className={styles.map}
           style={{
             height: '500px',
-            paddingLeft: '10px',
-            paddingRight: '10px',
+            paddingLeft: '0px',
+            paddingRight: '0px',
+            paddingBottom: '30px',
           }}
         >
           <Map stores={stores} focusedStore={focus} />
