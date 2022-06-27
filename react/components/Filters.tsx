@@ -186,7 +186,7 @@ const Filters: React.FC<FiltersProps> = ({
             placeholder="Ingresa una dirección"
             className={styles.adressAutocomplete}
             style={{
-              width: isMobile ? '250px' : `300px`,
+              width: isMobile ? '100%' : `300px`,
             }}
           />
         </Autocomplete>

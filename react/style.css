@@ -107,6 +107,7 @@ body {
 .adressInput {
   padding-bottom: 10px;
   display: flex !important;
+  /* width: 90%; */
 }
 
 /* .bottonSeeAll {
@@ -126,8 +127,8 @@ body {
   background-color: #ffffff;
   height: 35px;
   /* width: 250px; */
-  width: 90%;
-  padding-left: 5%;
+  width: 90%; 
+  margin-left: 5%;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
@@ -137,13 +138,14 @@ body {
 }
 
 .clearButton {
+  display: none;
   text-decoration: none;
   color: #ffffff;
   border-radius: 0px 5px 5px 0px;
   border-bottom: 1px solid #A2A2A2;
   border-top: 1px solid #A2A2A2;
   border-right: 1px solid #A2A2A2;
-  border-left: 0px;
+  border-left: 1px solid #A2A2A2;
   background-color: #FFFFFF;
   padding: 4.5px;
   margin-left: -2px;
@@ -155,9 +157,20 @@ body {
 }
 
 .adressAutocomplete::placeholder {
-  color: red;
+  color: black;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 14px;
 }
+
+.puntocommerce-storemap-0-x-adressAutocomplete{
+  border-right: 1px solid #A2A2A2;
+  border-radius: 5px;
+}
+
 .adressAutocomplete {
+  
+
   text-align: center;
   border-radius: 5px 0px 0px 5px;
   border-bottom: 1px solid #A2A2A2;
@@ -256,7 +269,7 @@ body {
 }
 
 .listItem {
-  background-color: rgb(248, 248, 248);
+  background-color: #F7F7F7;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-right: .5rem;
@@ -319,4 +332,18 @@ body {
     .contMap {
       display: flex !important;
     }
+  }
+  .adressInput
+  .adressAutocomplete{
+    border-radius: 5px;
+    border-right: 1px solid #A2A2A2;
+    width: 90%!important;
+    margin-left: 5%;
+  }
+
+  .adressInput{
+    width: 100%;
+  }
+  .adressInput div{
+    width: 100%;
   }
