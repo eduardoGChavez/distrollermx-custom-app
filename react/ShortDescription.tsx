@@ -6,11 +6,14 @@ const ShortDescription: FC = () => {
   const productContextValue = useProduct()
   const [description, setDescription] = useState()
 
-  const getShortDescription = () => {
+  const getShortDescription = async () => {
+    console.log('short description: ', productContextValue );
     if (productContextValue.selectedItem) {
-      if (productContextValue.selectedItem.complementName) {
-        setDescription(productContextValue.selectedItem.complementName)
-      }
+        let urlRFFisica = `/api/catalog/pvt/product/${productContextValue.product.productId}`;
+        let resRFFisica = await fetch(urlRFFisica);
+      let razonRFFisica = await resRFFisica.json();
+      setDescription(razonRFFisica.DescriptionShort);
+      console.log(razonRFFisica);
     }
   }
 
