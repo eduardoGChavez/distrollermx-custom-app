@@ -5,8 +5,8 @@
   "storeMap": {
     "component": "StoreMap"
   },
-  "longDescription": {
-    "component": "LongDescription"
+  "shortDescription": {
+    "component": "ShortDescription"
   },
   "OrderFilters": {
     "component": "OrderByFilters"
