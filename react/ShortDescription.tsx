@@ -7,13 +7,34 @@ const ShortDescription: FC = () => {
   const [description, setDescription] = useState()
 
   const getShortDescription = async () => {
-    console.log('short description: ', productContextValue );
+    // console.log('short description: ', productContextValue );
     if (productContextValue.selectedItem) {
-        let urlRFFisica = `/api/catalog/pvt/product/${productContextValue.product.productId}`;
-        let resRFFisica = await fetch(urlRFFisica);
+        let urlRFFisica = `/api/catalog/pvt/product/${productContextValue.product.productId}/specification/`;
+        // let urlRFFisica = `/api/catalog/pvt/product/${productContextValue.product.productId}`;
+      
+      let resRFFisica = await fetch(urlRFFisica);
       let razonRFFisica = await resRFFisica.json();
-      setDescription(razonRFFisica.DescriptionShort);
-      console.log(razonRFFisica);
+      // console.log(razonRFFisica[6].Text);
+      // setDescription(razonRFFisica[6].Text);
+      let txt = razonRFFisica[6].Text;
+      if (txt.length > 57) {
+        let txtSplit = txt.split(' ');
+        let letras='';
+        txtSplit.map((palabra: string) => {
+          if ((letras +' '+ palabra).length < 55) {
+            letras = letras +" "+ palabra;
+          }
+          else {
+            txt = letras+"...";
+          }
+        })
+        // txt = txt.substring(0, 60) + "...";
+      }
+
+      setDescription(txt);
+
+      // console.log(txt+'...');
+      // console.log(razonRFFisica);
     }
   }
 
