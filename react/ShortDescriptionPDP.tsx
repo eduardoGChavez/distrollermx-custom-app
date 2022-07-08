@@ -7,20 +7,19 @@ const ShortDescriptionPDP: FC = () => {
   const [description, setDescriptionPDP] = useState()
 
   const getShortDescriptionPDP = async () => {
-    // console.log('short description: ', productContextValue );
+    
     if (productContextValue.selectedItem) {
-        let urlSD = `/api/catalog/pvt/product/${productContextValue.product.productId}/specification/`;
-        // let urlRFFisica = `/api/catalog/pvt/product/${productContextValue.product.productId}`;
-      
+      let urlSD = `/api/catalog/pvt/product/${productContextValue.product.productId}/specification/`;      
       let resSD = await fetch(urlSD);
       let SD = await resSD.json();
-      console.log(SD[6].Text);
-      setDescriptionPDP(SD[6].Text);
 
-      // setDescription(txt);
+      SD.map((specification:any) => {
+        if( specification.FieldId === 34 && specification.Text.length > 0) {
+          let txt = specification.Text;
+          setDescriptionPDP(txt);
+        }
+      });
 
-      // console.log(txt+'...');
-      console.log(SD);
     }
   }
 

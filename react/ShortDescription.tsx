@@ -7,34 +7,31 @@ const ShortDescription: FC = () => {
   const [description, setDescription] = useState()
 
   const getShortDescription = async () => {
-    // console.log('short description: ', productContextValue );
+    
     if (productContextValue.selectedItem) {
-        let urlSD = `/api/catalog/pvt/product/${productContextValue.product.productId}/specification/`;
-        // let urlRFFisica = `/api/catalog/pvt/product/${productContextValue.product.productId}`;
-      
+      let urlSD = `/api/catalog/pvt/product/${productContextValue.product.productId}/specification/`;      
       let resSD = await fetch(urlSD);
       let SD = await resSD.json();
-      // console.log(razonRFFisica[6].Text);
-      // setDescription(razonRFFisica[6].Text);
-      let txt = SD[6].Text;
-      if (txt.length > 57) {
-        let txtSplit = txt.split(' ');
-        let letras='';
-        txtSplit.map((palabra: string) => {
-          if ((letras +' '+ palabra).length < 55) {
-            letras = letras +" "+ palabra;
-          }
-          else {
-            txt = letras+"...";
-          }
-        })
-        // txt = txt.substring(0, 60) + "...";
-      }
 
-      setDescription(txt);
+      SD.map((specification:any) => {
+        if( specification.FieldId === 34 && specification.Text.length > 0) {
+          let txt = specification.Text;
+          if (txt.length > 57) {
+            let txtSplit = txt.split(' ');
+            let letras='';
+            txtSplit.map((palabra: string) => {
+              if ((letras + ' ' + palabra).length < 55) {
+                letras = letras + " " + palabra;
+              }
+              else {
+                txt = letras + "...";
+              }
+            })
+          }
+          setDescription(txt);
+        }
+      });
 
-      // console.log(txt+'...');
-      // console.log(razonRFFisica);
     }
   }
 
