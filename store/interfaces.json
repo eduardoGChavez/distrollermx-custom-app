@@ -8,6 +8,9 @@
   "shortDescription": {
     "component": "ShortDescription"
   },
+  "shortDescriptionPDP": {
+    "component": "ShortDescriptionPDP"
+  },
   "OrderFilters": {
     "component": "OrderByFilters"
   },

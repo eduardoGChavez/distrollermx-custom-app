@@ -9,14 +9,14 @@ const ShortDescription: FC = () => {
   const getShortDescription = async () => {
     // console.log('short description: ', productContextValue );
     if (productContextValue.selectedItem) {
-        let urlRFFisica = `/api/catalog/pvt/product/${productContextValue.product.productId}/specification/`;
+        let urlSD = `/api/catalog/pvt/product/${productContextValue.product.productId}/specification/`;
         // let urlRFFisica = `/api/catalog/pvt/product/${productContextValue.product.productId}`;
       
-      let resRFFisica = await fetch(urlRFFisica);
-      let razonRFFisica = await resRFFisica.json();
+      let resSD = await fetch(urlSD);
+      let SD = await resSD.json();
       // console.log(razonRFFisica[6].Text);
       // setDescription(razonRFFisica[6].Text);
-      let txt = razonRFFisica[6].Text;
+      let txt = SD[6].Text;
       if (txt.length > 57) {
         let txtSplit = txt.split(' ');
         let letras='';
