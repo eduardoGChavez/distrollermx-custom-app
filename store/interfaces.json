@@ -16,5 +16,8 @@
   },
   "IFrameGames": {
     "component": "Juegos"
+  },
+  "removeCards": {
+    "component": "RemoveCards"
   }
 }
